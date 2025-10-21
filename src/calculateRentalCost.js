@@ -5,17 +5,17 @@
  */
 function calculateRentalCost(days) {
   const price = 40;
-  const sum = price * days;
+  const totalPrice = price * days;
 
   if (days >= 7) {
-    return sum - 50;
+    return totalPrice - 50;
   }
 
   if (days >= 3) {
-    return sum - 20;
+    return totalPrice - 20;
   }
 
-  return sum;
+  return totalPrice;
 }
 
 calculateRentalCost(1);
