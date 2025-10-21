@@ -4,18 +4,22 @@
  * @return {number}
  */
 function calculateRentalCost(days) {
-  const price = 40;
-  const totalPrice = price * days;
+  const DAILY_RATE = 40;
+  const WEEKLY_DISCOUNT = 50;
+  const MULTI_DAY_DISCOUNT = 20;
+  const MIN_DAYS_WEEKLY_DISCOUNT = 7;
+  const MIN_DAYS_MULTI_DAY_DISCOUNT = 3;
+  const baseCost = DAILY_RATE * days;
 
-  if (days >= 7) {
-    return totalPrice - 50;
+  if (days >= MIN_DAYS_WEEKLY_DISCOUNT) {
+    return baseCost - WEEKLY_DISCOUNT;
   }
 
-  if (days >= 3) {
-    return totalPrice - 20;
+  if (days >= MIN_DAYS_MULTI_DAY_DISCOUNT) {
+    return baseCost - MULTI_DAY_DISCOUNT;
   }
 
-  return totalPrice;
+  return baseCost;
 }
 
 calculateRentalCost(1);
